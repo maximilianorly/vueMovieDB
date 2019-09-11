@@ -1,9 +1,7 @@
 <template>
   <div id="app" v-if="status === 'ready'">
     <Header :title="title"/>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <h1 > {{ hello }} </h1>
-    <HelloWorld v-if="isTrue" msg="Welcome to Your Vue.js App" />
+    <MoviesList />
   </div>
   <div v-else-if="status === 'Loading...'">
     "Loading..."
@@ -14,8 +12,8 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import Header from './components/Header'
+import MoviesList from './components/moviesList'
 
 
 export default {
@@ -29,8 +27,8 @@ export default {
     }
   },
   components: {
-    HelloWorld,
-    Header
+    Header,
+    MoviesList,
   }
 }
 </script>
