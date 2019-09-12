@@ -1,34 +1,23 @@
 <template>
-  <div id="app" v-if="status === 'ready'">
+  <div id="app">
     <Header :title="title"/>
-    <MoviesList />
-  </div>
-  <div v-else-if="status === 'Loading...'">
-    "Loading..."
-  </div>
-  <div v-else>
-    "Error"
+    <router-view />
   </div>
 </template>
 
 <script>
-import Header from './components/Header'
-import MoviesList from './components/moviesList'
+import Header from './components/Header';
 
 
 export default {
   name: 'app',
   data() {
     return {
-    hello: "Hello Worldie",
-    title: "Vue Movie DB",
-    isTrue: true,
-    status: "ready"
+      title: "Vue Movie DB",
     }
   },
   components: {
     Header,
-    MoviesList,
   }
 }
 </script>
@@ -39,7 +28,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: white;
 }
 </style>

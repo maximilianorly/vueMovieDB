@@ -23,7 +23,7 @@ import { async } from 'q';
             fetchData: async function() {
                 try {
                     const res = await fetch(
-                        'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc/&api_key=dba3bcd7af5d39ba33fcf9c5f0fd19e3'
+                        'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=dba3bcd7af5d39ba33fcf9c5f0fd19e3&original_language=en'
                         );
                         const movies = await res.json();
                         this.movies = movies.results;
@@ -39,5 +39,12 @@ import { async } from 'q';
 </script>
 
 <style lang="scss" scoped>
-
+ul {
+    display: grid;
+    list-style: none;
+    padding: 1rem;
+    margin: 0;
+    grid-row-gap: 1rem;
+    grid-template-columns: repeat(6, 1fr)
+}
 </style>
