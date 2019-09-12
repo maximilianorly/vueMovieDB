@@ -1,7 +1,7 @@
 <template>
    <ul>
-       <li v-for="movie in movies">
-           <Movie :movie="movie"/>
+       <li v-for="(movie, key) in movies" :key="key">
+           <Movie :movie="movie" :key="key"/>
        </li>
    </ul>
 </template>
@@ -14,6 +14,7 @@ import { async } from 'q';
         data() {
             return {
                 movies: [],
+                keys: []
             }
         },
         created: function() {
